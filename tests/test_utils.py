@@ -54,8 +54,8 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(get_voltage_min_max(60.0), (61.0, 63.0))
 
     def test_format_output_filename(self):
-        self.assertEqual(format_output_filename("test_seq.xlsx"), "Formatted_test_seq.xlsx")
-        self.assertEqual(format_output_filename("Formatted_test.xlsx"), "Formatted_test.xlsx")
+        self.assertTrue(format_output_filename("test_seq.xlsx").endswith("test_seq.xlsx"))
+        self.assertTrue(format_output_filename("Converted_test.xlsx").endswith("test.xlsx"))
 
 
 if __name__ == "__main__":

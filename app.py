@@ -1,8 +1,7 @@
 """
-Streamlit Application for OTIS Excel Report Formatter.
-Provides a modern dashboard UI for uploading OTIS Test Sequence files,
-previewing parsed report blocks, converting to formatted inspection reports,
-and downloading the final output.
+Streamlit Application for Universal AI Excel Format Converter.
+Provides a modern dashboard UI for uploading any Excel file, configuring AI column mappings,
+interpreting natural language prompts, applying templates, and downloading transformed reports.
 """
 
 import os
@@ -19,100 +18,70 @@ if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 import config
-from logger import logger, log_upload
+from logger import logger, log_transformation, log_error
 from utils import ensure_directories, format_output_filename
-from parser import parse_test_sequence_workbook
-from formatter import convert_otis_report
+from validators import validate_workbook_file, validate_dataframe_headers, validate_column_mapping
+from parser import get_workbook_sheet_names, parse_excel_sheet
+from mapping_engine import suggest_column_mappings
+from prompt_engine import parse_user_prompt, PromptInstructions
+from transformer import transform_dataset, TransformedData
+from template_engine import TemplateEngine
+from formatter import export_transformed_data
 
 # Page Configuration
 st.set_page_config(
-    page_title="OTIS Excel Report Formatter",
-    page_icon="📊",
+    page_title="Universal AI Excel Format Converter",
+    page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Ensure required directories exist
 ensure_directories()
 
-# Custom CSS Styling
+# Custom White and Blue Professional Theme CSS
 CUSTOM_CSS = """
 <style>
-    /* Global Styling */
     .main {
-        background-color: #0f172a;
-        color: #f8fafc;
+        background-color: #f8fafc;
+        color: #1e293b;
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
-    
-    /* Header Card */
     .header-card {
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        border: 1px solid #334155;
-        border-radius: 12px;
+        background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        border-radius: 14px;
         padding: 24px;
+        color: #ffffff;
         margin-bottom: 24px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.2);
     }
-    
     .header-title {
-        color: #38bdf8;
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 6px;
+        color: #ffffff;
     }
-    
     .header-subtitle {
-        color: #94a3b8;
         font-size: 15px;
+        color: #93c5fd;
     }
-    
-    /* Metric Cards */
-    .metric-container {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 24px;
-    }
-    
     .metric-card {
-        background-color: #1e293b;
-        border: 1px solid #334155;
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 10px;
         padding: 16px;
-        flex: 1;
         text-align: center;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
     }
-    
     .metric-val {
-        color: #38bdf8;
+        color: #2563eb;
         font-size: 26px;
         font-weight: 700;
     }
-    
     .metric-lbl {
-        color: #94a3b8;
-        font-size: 13px;
+        color: #64748b;
+        font-size: 12px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-    }
-    
-    /* Status Badges */
-    .status-badge-success {
-        background-color: #064e3b;
-        color: #34d399;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-    }
-    
-    .status-badge-warning {
-        background-color: #78350f;
-        color: #fbbf24;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
     }
 </style>
 """
@@ -120,35 +89,35 @@ st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
 
 def init_session_state():
-    """Initializes Streamlit session state variables."""
-    if "uploaded_file_bytes" not in st.session_state:
-        st.session_state.uploaded_file_bytes = None
-    if "uploaded_filename" not in st.session_state:
-        st.session_state.uploaded_filename = None
-    if "parsed_blocks" not in st.session_state:
-        st.session_state.parsed_blocks = None
-    if "parse_warnings" not in st.session_state:
-        st.session_state.parse_warnings = []
-    if "parse_summary" not in st.session_state:
-        st.session_state.parse_summary = None
-    if "generated_output_path" not in st.session_state:
-        st.session_state.generated_output_path = None
-    if "generated_bytes" not in st.session_state:
-        st.session_state.generated_bytes = None
-    if "conversion_summary" not in st.session_state:
-        st.session_state.conversion_summary = None
+    if "input_file_bytes" not in st.session_state:
+        st.session_state.input_file_bytes = None
+    if "input_filename" not in st.session_state:
+        st.session_state.input_filename = None
+    if "template_file_bytes" not in st.session_state:
+        st.session_state.template_file_bytes = None
+    if "selected_sheet" not in st.session_state:
+        st.session_state.selected_sheet = None
+    if "df_input" not in st.session_state:
+        st.session_state.df_input = None
+    if "input_summary" not in st.session_state:
+        st.session_state.input_summary = None
+    if "manual_mappings" not in st.session_state:
+        st.session_state.manual_mappings = {}
+    if "user_prompt" not in st.session_state:
+        st.session_state.user_prompt = ""
+    if "selected_preset" not in st.session_state:
+        st.session_state.selected_preset = "Auto Grid"
+    if "transformed_data" not in st.session_state:
+        st.session_state.transformed_data = None
+    if "output_bytes" not in st.session_state:
+        st.session_state.output_bytes = None
+    if "output_filepath" not in st.session_state:
+        st.session_state.output_filepath = None
 
 
-def reset_application():
-    """Resets all session state variables."""
-    st.session_state.uploaded_file_bytes = None
-    st.session_state.uploaded_filename = None
-    st.session_state.parsed_blocks = None
-    st.session_state.parse_warnings = []
-    st.session_state.parse_summary = None
-    st.session_state.generated_output_path = None
-    st.session_state.generated_bytes = None
-    st.session_state.conversion_summary = None
+def reset_app():
+    for key in list(st.session_state.keys()):
+        del st.session_state[key]
     st.rerun()
 
 
@@ -157,200 +126,299 @@ def main():
 
     # --- SIDEBAR ---
     with st.sidebar:
-        # Display Application Logo
         logo_path = os.path.join(config.ASSETS_DIR, "logo.png")
         if os.path.exists(logo_path):
             st.image(logo_path, use_container_width=True)
         else:
-            st.title("OTIS Formatter")
+            st.title("Universal Converter")
 
         st.markdown("---")
-        st.subheader("⚙️ Controls & Upload")
+        st.subheader("📥 1. Input Source")
 
-        uploaded_file = st.file_uploader(
-            "Upload OTIS Excel",
-            type=["xlsx", "xls"],
-            help="Upload OTIS Test Sequence Excel file"
+        uploaded_file = st.file_uploader("Upload Input Excel", type=["xlsx", "xls"], help="Upload any input Excel file")
+
+        sample_choice = st.selectbox(
+            "Or Choose Sample Dataset",
+            options=["None", "OTIS Test Sequence", "Student Marks", "Sales Invoice Data", "Employee Attendance", "Inventory Stock"]
         )
 
-        use_sample = st.checkbox("Use Sample Test Sequence File", value=False)
-
-        if use_sample and st.session_state.uploaded_file_bytes is None:
-            sample_path = os.path.join(config.SAMPLE_DIR, "sample_test_sequence.xlsx")
-            if os.path.exists(sample_path):
-                with open(sample_path, "rb") as f:
-                    st.session_state.uploaded_file_bytes = f.read()
-                st.session_state.uploaded_filename = "sample_test_sequence.xlsx"
-                st.success("Sample file loaded!")
+        if sample_choice != "None" and st.session_state.input_file_bytes is None:
+            sample_map = {
+                "OTIS Test Sequence": "OTIS_Test_Sequence.xlsx",
+                "Student Marks": "Student_Marks_Sheet.xlsx",
+                "Sales Invoice Data": "Sales_Data.xlsx",
+                "Employee Attendance": "Employee_Attendance.xlsx",
+                "Inventory Stock": "Inventory_Stock.xlsx"
+            }
+            s_filename = sample_map[sample_choice]
+            s_path = os.path.join(config.SAMPLE_DIR, s_filename)
+            if os.path.exists(s_path):
+                with open(s_path, "rb") as f:
+                    st.session_state.input_file_bytes = f.read()
+                st.session_state.input_filename = s_filename
+                st.success(f"Loaded '{s_filename}'!")
 
         if uploaded_file is not None:
-            file_bytes = uploaded_file.getvalue()
-            if st.session_state.uploaded_file_bytes != file_bytes:
-                st.session_state.uploaded_file_bytes = file_bytes
-                st.session_state.uploaded_filename = uploaded_file.name
-                # Reset previous conversion state
-                st.session_state.parsed_blocks = None
-                st.session_state.generated_output_path = None
-                st.session_state.generated_bytes = None
-                log_upload(uploaded_file.name, len(file_bytes))
+            f_bytes = uploaded_file.getvalue()
+            if st.session_state.input_file_bytes != f_bytes:
+                st.session_state.input_file_bytes = f_bytes
+                st.session_state.input_filename = uploaded_file.name
+                st.session_state.df_input = None
+                st.session_state.transformed_data = None
 
-        # Output Folder selector/display
-        st.markdown("### 📁 Output Directory")
-        output_dir_input = st.text_input("Output Path", value=config.OUTPUT_DIR)
+        st.markdown("### 📄 2. Format Template (Optional)")
+        template_file = st.file_uploader("Upload Excel Template", type=["xlsx"], help="Optional template defines formatting, fonts, borders")
+        if template_file is not None:
+            st.session_state.template_file_bytes = template_file.getvalue()
+            st.success("Template loaded!")
 
         st.markdown("---")
+        st.subheader("⚙️ 3. Transformation Configuration")
 
+        preset = st.selectbox("Preset Layout", options=list(config.PRESET_TEMPLATES.keys()), index=0)
+        st.session_state.selected_preset = preset
+
+        output_format = st.selectbox("Output Format", options=config.SUPPORTED_OUTPUT_FORMATS, index=0)
+
+        st.markdown("---")
         col_btn1, col_btn2 = st.columns(2)
         with col_btn1:
-            gen_clicked = st.button("🚀 Generate Report", use_container_width=True, type="primary")
+            gen_clicked = st.button("🚀 Convert", use_container_width=True, type="primary")
         with col_btn2:
             reset_clicked = st.button("🔄 Reset", use_container_width=True)
 
         if reset_clicked:
-            reset_application()
+            reset_app()
 
     # --- MAIN PAGE HEADER ---
     st.markdown("""
         <div class="header-card">
-            <div class="header-title">OTIS Excel Report Formatter</div>
+            <div class="header-title">Universal AI Excel Format Converter</div>
             <div class="header-subtitle">
-                Automated Enterprise Conversion of OTIS Test Sequence Files into Inspection Reports
+                Enterprise Data Transformation & Automated Format Conversion System
             </div>
         </div>
     """, unsafe_allow_html=True)
 
-    if st.session_state.uploaded_file_bytes is None:
-        st.info("👋 Please upload an OTIS Test Sequence Excel file from the sidebar or select 'Use Sample Test Sequence File' to test immediately.")
+    if st.session_state.input_file_bytes is None:
+        st.info("👋 Welcome! Please upload an Excel workbook from the sidebar or choose a sample dataset to get started.")
 
-        # Show feature overview card
-        with st.expander("📌 Features & Overview", expanded=True):
-            st.markdown("""
-            - **Automatic Worksheet Detection**: Locates the `Test Sequence` sheet automatically.
-            - **Smart Header Mapping**: Identifies column headers regardless of exact position.
-            - **Report Block Parsing**: Aggregates test rows by `Sl.No` (1.1, 1.2, 2.1, etc.).
-            - **Automated Min/Max Lookups**: Calculates voltage tolerance ranges (18V, 24V, 28V, 30V, 48V, 54V, 60V).
-            - **5-Row Report Formatting**: Recreates OTIS standard 5-row structured blocks with merged cell formatting.
-            - **Print & Layout Optimization**: Applies Landscape orientation, A4 paper size, freeze top rows, and explicit column widths.
-            """)
+        # Quick Demo Cards
+        st.markdown("### 💡 What would you like to convert today?")
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            st.markdown("#### 🏢 OTIS Test Sequence")
+            st.caption("Converts raw test sequence rows into formatted 5-row inspection blocks with voltage/current limits.")
+        with c2:
+            st.markdown("#### 🎓 Student Marks")
+            st.caption("Maps student marksheets to result sheets with calculated Totals, Percentages, and Grades.")
+        with c3:
+            st.markdown("#### 🧾 Sales & Billing")
+            st.caption("Transforms sales orders into formatted Invoice statements with Subtotal, GST, and Grand Totals.")
         return
 
-    # Process file parsing if not already parsed
-    if st.session_state.parsed_blocks is None:
+    # Parse Excel Sheet if not already parsed
+    if st.session_state.df_input is None:
         try:
-            with st.spinner("Parsing OTIS Test Sequence file..."):
-                blocks, warnings, summary = parse_test_sequence_workbook(st.session_state.uploaded_file_bytes)
-                st.session_state.parsed_blocks = blocks
-                st.session_state.parse_warnings = warnings
-                st.session_state.parse_summary = summary
+            is_valid, errs = validate_workbook_file(st.session_state.input_file_bytes, st.session_state.input_filename)
+            if not is_valid:
+                for e in errs:
+                    st.error(e)
+                return
+
+            sheet_list = get_workbook_sheet_names(st.session_state.input_file_bytes)
+            selected_sheet = sheet_list[0]
+
+            df, _, summary = parse_excel_sheet(st.session_state.input_file_bytes, sheet_name=selected_sheet)
+            st.session_state.df_input = df
+            st.session_state.selected_sheet = selected_sheet
+            st.session_state.input_summary = summary
         except Exception as e:
-            st.error(f"❌ Parsing Error: {str(e)}")
-            logger.error("Parsing failed in app.py", exc_info=True)
+            st.error(f"❌ Failed to parse Excel file: {str(e)}")
+            logger.error("Excel parsing failed in app.py", exc_info=True)
             return
 
-    # --- UPLOADED FILE INFO & METRICS ---
-    st.markdown("### 📄 Uploaded File Summary")
-    f_col1, f_col2, f_col3, f_col4 = st.columns(4)
-    with f_col1:
-        st.metric("Filename", st.session_state.uploaded_filename)
-    with f_col2:
-        st.metric("Total Reports", len(st.session_state.parsed_blocks))
-    with f_col3:
-        st.metric("Parsed Rows", st.session_state.parse_summary.get("total_rows_parsed", 0))
-    with f_col4:
-        status_str = "Warnings Found" if st.session_state.parse_warnings else "Valid"
-        st.metric("Status", status_str)
+    # --- DASHBOARD TABS ---
+    tab1, tab2, tab3, tab4 = st.columns([1, 1, 1, 1])
 
-    if st.session_state.parse_warnings:
-        with st.expander("⚠️ Parsing Warnings", expanded=False):
-            for w in st.session_state.parse_warnings:
-                st.warning(w)
+    st.markdown("---")
 
-    # --- GENERATE REPORT ACTION ---
-    if gen_clicked:
-        progress_bar = st.progress(0)
-        status_text = st.empty()
+    # Main Tabs Interface
+    main_tab1, main_tab2, main_tab3, main_tab4 = st.tabs([
+        "📁 1. Sheet Preview",
+        "🤖 2. AI Column Mapping",
+        "✍️ 3. Natural Language Prompt",
+        "📊 4. Transformed Preview & Export"
+    ])
 
-        try:
-            status_text.text("Step 1/3: Reading and validating report blocks...")
-            progress_bar.progress(30)
-            time.sleep(0.2)
+    # --- TAB 1: SHEET PREVIEW ---
+    with main_tab1:
+        st.markdown("### 📁 Uploaded Sheet Inspector")
+        sheet_list = st.session_state.input_summary.get("available_sheets", [st.session_state.selected_sheet])
 
-            status_text.text("Step 2/3: Constructing 5-row report layout & openpyxl styles...")
-            progress_bar.progress(70)
+        if len(sheet_list) > 1:
+            chosen_sheet = st.selectbox("Select Worksheet", options=sheet_list, index=sheet_list.index(st.session_state.selected_sheet))
+            if chosen_sheet != st.session_state.selected_sheet:
+                df, _, summary = parse_excel_sheet(st.session_state.input_file_bytes, sheet_name=chosen_sheet)
+                st.session_state.df_input = df
+                st.session_state.selected_sheet = chosen_sheet
+                st.session_state.input_summary = summary
+                st.rerun()
 
-            out_path = os.path.join(output_dir_input, format_output_filename(st.session_state.uploaded_filename))
+        m1, m2, m3 = st.columns(3)
+        with m1:
+            st.metric("Worksheet", st.session_state.selected_sheet)
+        with m2:
+            st.metric("Total Rows", len(st.session_state.df_input))
+        with m3:
+            st.metric("Total Columns", len(st.session_state.df_input.columns))
 
-            saved_path, blocks, conv_summary = convert_otis_report(
-                input_file=st.session_state.uploaded_file_bytes,
-                output_file_path=out_path,
-                original_filename=st.session_state.uploaded_filename
+        st.markdown("#### Data Preview (Top 50 Rows)")
+        st.dataframe(st.session_state.df_input.head(50), use_container_width=True, height=350)
+
+    # --- TAB 2: AI COLUMN MAPPING ---
+    with main_tab2:
+        st.markdown("### 🤖 AI Column Mapping Engine")
+        st.caption("Automatic AI suggestions mapping input columns to output columns. Override any mapping using the dropdowns.")
+
+        # Interpret Prompt to get target columns
+        instructions = parse_user_prompt(st.session_state.user_prompt, default_preset=st.session_state.selected_preset)
+        input_cols = list(st.session_state.df_input.columns)
+        target_cols = instructions.target_columns
+
+        ai_suggestions = suggest_column_mappings(input_cols, target_cols)
+
+        mapping_table = []
+        final_column_map = {}
+
+        for target in target_cols:
+            sug_col, conf = ai_suggestions.get(target, ("", 0.0))
+
+            # Selectbox for manual override
+            options = ["(Blank / None)"] + input_cols
+            default_idx = options.index(sug_col) if sug_col in options else 0
+
+            chosen_col = st.selectbox(
+                f"Target: '{target}'",
+                options=options,
+                index=default_idx,
+                key=f"map_select_{target}"
             )
 
-            with open(saved_path, "rb") as f:
-                st.session_state.generated_bytes = f.read()
+            actual_input = "" if chosen_col == "(Blank / None)" else chosen_col
+            final_column_map[target] = actual_input
 
-            st.session_state.generated_output_path = saved_path
-            st.session_state.conversion_summary = conv_summary
+            confidence_label = f"{int(conf*100)}% Match" if conf > 0 else "Manual / Default"
+            mapping_table.append({
+                "Target Column": target,
+                "Mapped Input Column": actual_input or "(Blank)",
+                "AI Confidence": confidence_label
+            })
 
-            progress_bar.progress(100)
-            status_text.text("Conversion complete!")
-            st.success(f"🎉 Report generated successfully! Saved to: `{saved_path}`")
+        st.session_state.manual_mappings = final_column_map
+        st.dataframe(pd.DataFrame(mapping_table), use_container_width=True)
 
-        except Exception as e:
-            st.error(f"❌ Conversion failed: {str(e)}")
-            logger.error("Conversion failed in app.py", exc_info=True)
+    # --- TAB 3: PROMPT ENGINE ---
+    with main_tab3:
+        st.markdown("### ✍️ Natural Language Transformation Prompt")
+        st.caption("Describe your desired output layout in plain English.")
 
-    # --- DISPLAY GENERATED REPORT METRICS & DOWNLOAD ---
-    if st.session_state.conversion_summary:
-        st.markdown("---")
-        st.markdown("### 📊 Report Generation Summary")
-
-        c1, c2, c3, c4, c5 = st.columns(5)
-        with c1:
-            st.metric("Total Reports", st.session_state.conversion_summary["total_reports"])
-        with c2:
-            st.metric("Rows Written", st.session_state.conversion_summary["total_rows_written"])
-        with c3:
-            st.metric("Voltage Rows", st.session_state.conversion_summary["voltage_rows"])
-        with c4:
-            st.metric("Current Rows", st.session_state.conversion_summary["current_rows"])
-        with c5:
-            st.metric("Time (s)", st.session_state.conversion_summary["processing_time_seconds"])
-
-        out_name = format_output_filename(st.session_state.uploaded_filename)
-        st.download_button(
-            label=f"📥 Download {out_name}",
-            data=st.session_state.generated_bytes,
-            file_name=out_name,
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            type="primary"
+        prompt_input = st.text_area(
+            "Enter Transformation Prompt",
+            value=st.session_state.user_prompt,
+            height=120,
+            placeholder="Example: Convert to Student Result sheet with columns: Student Name, USN, Total Marks, Percentage, Grade. Calculate Percentage = Total Marks / 500 * 100."
         )
+        st.session_state.user_prompt = prompt_input
 
-    # --- PREVIEW TABLE ---
-    st.markdown("---")
-    st.markdown("### 🔍 Parsed Reports Preview")
+        # Quick Example Buttons
+        st.markdown("#### Quick Example Prompts")
+        qp1, qp2, qp3 = st.columns(3)
+        with qp1:
+            if st.button("Sample: OTIS Inspection Report"):
+                st.session_state.user_prompt = "Arrange this Excel into OTIS report format with columns: Sl No, Test Name, Device, Value, Min, Max, Actual. Merge Sl No and Test Name cells."
+                st.rerun()
+        with qp2:
+            if st.button("Sample: Student Result Sheet"):
+                st.session_state.user_prompt = "Convert to Student Result sheet with columns: Student Name, USN, Department, Semester, Total Marks, Percentage, Grade. Calculate Percentage = Total Marks / 500 * 100."
+                st.rerun()
+        with qp3:
+            if st.button("Sample: Sales Invoice"):
+                st.session_state.user_prompt = "Convert to Invoice format with columns: Invoice No, Item Description, Quantity, Unit Price, Total, GST (18%), Grand Total."
+                st.rerun()
 
-    table_data = []
-    for b in st.session_state.parsed_blocks:
-        table_data.append({
-            "Report": str(b.report_no or ""),
-            "Test Name": str(b.test_name or ""),
-            "Voltage": str(b.voltage_raw or (f"{b.voltage}V" if b.voltage is not None else "")),
-            "Current": str(b.current_raw or (f"{b.current}A" if b.current is not None else "")),
-            "Point": str(b.measurement_point or ""),
-            "PSU Device": str(b.psu_device or ""),
-            "Min": str(b.min_voltage if b.min_voltage is not None else "-"),
-            "Max": str(b.max_voltage if b.max_voltage is not None else "-"),
-            "Status": "Warnings" if b.warnings else "OK"
-        })
+        # Parsed Rules Inspector
+        if prompt_input:
+            p_inst = parse_user_prompt(prompt_input, default_preset=st.session_state.selected_preset)
+            with st.expander("📋 View Parsed Prompt Rules", expanded=True):
+                st.json(p_inst.to_dict())
 
-    df_preview = pd.DataFrame(table_data).astype(str)
-    st.dataframe(df_preview, use_container_width=True, height=350)
+    # --- TAB 4: TRANSFORMED PREVIEW & EXPORT ---
+    with main_tab4:
+        st.markdown("### 📊 Transformed Output & Export")
 
-    # --- JSON SUMMARY VIEWER ---
-    with st.expander("📋 View Parsed Reports JSON Summary"):
-        json_blocks = [b.to_dict() for b in st.session_state.parsed_blocks]
-        st.json(json_blocks)
+        if gen_clicked or st.session_state.transformed_data is not None:
+            if gen_clicked:
+                try:
+                    with st.spinner("Executing transformation engine..."):
+                        start_t = time.time()
+                        instructions = parse_user_prompt(st.session_state.user_prompt, default_preset=st.session_state.selected_preset)
+                        col_map = st.session_state.manual_mappings
+
+                        t_data = transform_dataset(st.session_state.df_input, col_map, instructions)
+
+                        tmpl_engine = TemplateEngine(st.session_state.template_file_bytes) if st.session_state.template_file_bytes else None
+
+                        out_name = format_output_filename(st.session_state.input_filename, output_format.lower())
+                        out_path = os.path.join(config.OUTPUT_DIR, out_name)
+
+                        saved_path = export_transformed_data(t_data, out_path, output_format, tmpl_engine)
+
+                        with open(saved_path, "rb") as f:
+                            st.session_state.output_bytes = f.read()
+
+                        st.session_state.output_filepath = saved_path
+                        st.session_state.transformed_data = t_data
+
+                        elapsed = time.time() - start_t
+                        log_transformation(
+                            filename=st.session_state.input_filename,
+                            preset=instructions.preset_name,
+                            prompt=st.session_state.user_prompt,
+                            input_rows=len(st.session_state.df_input),
+                            output_rows=len(t_data.df_grid),
+                            elapsed_time=elapsed
+                        )
+                        st.success(f"🎉 Transformation complete! File saved to `{saved_path}`")
+
+                except Exception as e:
+                    st.error(f"❌ Transformation failed: {str(e)}")
+                    logger.error("Transformation error in app.py", exc_info=True)
+                    return
+
+            if st.session_state.transformed_data is not None:
+                t_res = st.session_state.transformed_data
+
+                # Summary Cards
+                tc1, tc2, tc3 = st.columns(3)
+                with tc1:
+                    st.metric("Input Rows", t_res.summary_metrics.get("input_rows", 0))
+                with tc2:
+                    st.metric("Transformed Rows", t_res.summary_metrics.get("output_rows", 0))
+                with tc3:
+                    st.metric("Output Preset", t_res.layout_type)
+
+                st.markdown("#### Transformed Data Preview")
+                st.dataframe(t_res.df_grid.head(50), use_container_width=True, height=350)
+
+                out_filename = os.path.basename(st.session_state.output_filepath)
+                st.download_button(
+                    label=f"📥 Download {out_filename}",
+                    data=st.session_state.output_bytes,
+                    file_name=out_filename,
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    type="primary"
+                )
 
 
 if __name__ == "__main__":
