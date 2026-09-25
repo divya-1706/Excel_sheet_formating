@@ -1,0 +1,766 @@
+[2026-09-25 11:59:12] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 11:59:12] [INFO] [parser.py:318] - Opening workbook for OTIS parsing...
+[2026-09-25 11:59:12] [INFO] [parser.py:143] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 11:59:12] [INFO] [parser.py:400] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 11:59:12] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 11:59:13] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 11:59:13] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 11:59:13] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.05 seconds.
+[2026-09-25 11:59:13] [INFO] [parser.py:318] - Opening workbook for OTIS parsing...
+[2026-09-25 11:59:13] [INFO] [parser.py:143] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 11:59:13] [INFO] [parser.py:400] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 11:59:58] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 11:59:58] [INFO] [parser.py:318] - Opening workbook for OTIS parsing...
+[2026-09-25 11:59:58] [INFO] [parser.py:143] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 11:59:58] [INFO] [parser.py:400] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 11:59:58] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 11:59:58] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 11:59:58] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\Formatted_sample_test_sequence.xlsx'
+[2026-09-25 11:59:58] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\Formatted_sample_test_sequence.xlsx' in 0.04 seconds.
+[2026-09-25 12:08:03] [INFO] [logger.py:62] - File uploaded: 'OTIS_MROB_ FVP _17092026template.xlsx' (73118 bytes)
+[2026-09-25 12:08:03] [INFO] [parser.py:318] - Opening workbook for OTIS parsing...
+[2026-09-25 12:08:03] [INFO] [parser.py:143] - Header row detected at row 1 with mapping: {'test_name': 3, 'point': 4, 'description': 5}
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 2 skipped (no preceding Sl.No detected): ''
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 3 skipped (no preceding Sl.No detected): '1'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 4 skipped (no preceding Sl.No detected): '2'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 5 skipped (no preceding Sl.No detected): '5'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 6 skipped (no preceding Sl.No detected): '7'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 7 skipped (no preceding Sl.No detected): '8'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 8 skipped (no preceding Sl.No detected): '9'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 9 skipped (no preceding Sl.No detected): '11'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 10 skipped (no preceding Sl.No detected): '13'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 11 skipped (no preceding Sl.No detected): '14'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 12 skipped (no preceding Sl.No detected): '15'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 13 skipped (no preceding Sl.No detected): '18'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 14 skipped (no preceding Sl.No detected): '20'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 15 skipped (no preceding Sl.No detected): '21'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 16 skipped (no preceding Sl.No detected): '22'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 17 skipped (no preceding Sl.No detected): '24'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 18 skipped (no preceding Sl.No detected): '26'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 19 skipped (no preceding Sl.No detected): '27'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 20 skipped (no preceding Sl.No detected): '28'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 21 skipped (no preceding Sl.No detected): '31'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 22 skipped (no preceding Sl.No detected): '33'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 23 skipped (no preceding Sl.No detected): '34'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 24 skipped (no preceding Sl.No detected): '35'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 25 skipped (no preceding Sl.No detected): '36'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 26 skipped (no preceding Sl.No detected): '38'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 27 skipped (no preceding Sl.No detected): '40'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 28 skipped (no preceding Sl.No detected): '41'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 29 skipped (no preceding Sl.No detected): '42'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 30 skipped (no preceding Sl.No detected): '43'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 31 skipped (no preceding Sl.No detected): '46'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 32 skipped (no preceding Sl.No detected): '48'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 33 skipped (no preceding Sl.No detected): '49'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 34 skipped (no preceding Sl.No detected): '50'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 35 skipped (no preceding Sl.No detected): '52'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 36 skipped (no preceding Sl.No detected): '54'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 37 skipped (no preceding Sl.No detected): '55'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 38 skipped (no preceding Sl.No detected): '56'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 39 skipped (no preceding Sl.No detected): '59'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 40 skipped (no preceding Sl.No detected): '61'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 41 skipped (no preceding Sl.No detected): '62'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 42 skipped (no preceding Sl.No detected): '63'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 43 skipped (no preceding Sl.No detected): '65'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 44 skipped (no preceding Sl.No detected): '67'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 45 skipped (no preceding Sl.No detected): '68'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 46 skipped (no preceding Sl.No detected): '69'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 47 skipped (no preceding Sl.No detected): '72'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 48 skipped (no preceding Sl.No detected): '74'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 49 skipped (no preceding Sl.No detected): '75'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 50 skipped (no preceding Sl.No detected): '76'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 51 skipped (no preceding Sl.No detected): '78'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 52 skipped (no preceding Sl.No detected): '80'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 53 skipped (no preceding Sl.No detected): '81'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 54 skipped (no preceding Sl.No detected): '82'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 55 skipped (no preceding Sl.No detected): '85'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 56 skipped (no preceding Sl.No detected): '87'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 57 skipped (no preceding Sl.No detected): '88'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 58 skipped (no preceding Sl.No detected): '89'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 59 skipped (no preceding Sl.No detected): '90'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 60 skipped (no preceding Sl.No detected): '92'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 61 skipped (no preceding Sl.No detected): '94'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 62 skipped (no preceding Sl.No detected): '95'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 63 skipped (no preceding Sl.No detected): '96'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 64 skipped (no preceding Sl.No detected): '97'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 65 skipped (no preceding Sl.No detected): '99'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 66 skipped (no preceding Sl.No detected): '101'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 67 skipped (no preceding Sl.No detected): '102'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 68 skipped (no preceding Sl.No detected): '103'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 69 skipped (no preceding Sl.No detected): '104'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 70 skipped (no preceding Sl.No detected): '106'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 71 skipped (no preceding Sl.No detected): '108'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 72 skipped (no preceding Sl.No detected): '109'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 73 skipped (no preceding Sl.No detected): '110'
+[2026-09-25 12:08:03] [WARNING] [parser.py:379] - Row 74 skipped (no preceding Sl.No detected): '111'
+[2026-09-25 12:08:03] [INFO] [parser.py:400] - Parsing complete. Extracted 0 report blocks.
+[2026-09-25 12:08:36] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:08:36] [INFO] [parser.py:318] - Opening workbook for OTIS parsing...
+[2026-09-25 12:08:37] [INFO] [parser.py:143] - Header row detected at row 1 with mapping: {'test_name': 3, 'point': 4, 'description': 5}
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 2 skipped (no preceding Sl.No detected): ''
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 3 skipped (no preceding Sl.No detected): '1'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 4 skipped (no preceding Sl.No detected): '2'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 5 skipped (no preceding Sl.No detected): '5'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 6 skipped (no preceding Sl.No detected): '7'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 7 skipped (no preceding Sl.No detected): '8'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 8 skipped (no preceding Sl.No detected): '9'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 9 skipped (no preceding Sl.No detected): '11'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 10 skipped (no preceding Sl.No detected): '13'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 11 skipped (no preceding Sl.No detected): '14'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 12 skipped (no preceding Sl.No detected): '15'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 13 skipped (no preceding Sl.No detected): '18'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 14 skipped (no preceding Sl.No detected): '20'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 15 skipped (no preceding Sl.No detected): '21'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 16 skipped (no preceding Sl.No detected): '22'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 17 skipped (no preceding Sl.No detected): '24'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 18 skipped (no preceding Sl.No detected): '26'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 19 skipped (no preceding Sl.No detected): '27'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 20 skipped (no preceding Sl.No detected): '28'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 21 skipped (no preceding Sl.No detected): '31'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 22 skipped (no preceding Sl.No detected): '33'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 23 skipped (no preceding Sl.No detected): '34'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 24 skipped (no preceding Sl.No detected): '35'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 25 skipped (no preceding Sl.No detected): '36'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 26 skipped (no preceding Sl.No detected): '38'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 27 skipped (no preceding Sl.No detected): '40'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 28 skipped (no preceding Sl.No detected): '41'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 29 skipped (no preceding Sl.No detected): '42'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 30 skipped (no preceding Sl.No detected): '43'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 31 skipped (no preceding Sl.No detected): '46'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 32 skipped (no preceding Sl.No detected): '48'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 33 skipped (no preceding Sl.No detected): '49'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 34 skipped (no preceding Sl.No detected): '50'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 35 skipped (no preceding Sl.No detected): '52'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 36 skipped (no preceding Sl.No detected): '54'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 37 skipped (no preceding Sl.No detected): '55'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 38 skipped (no preceding Sl.No detected): '56'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 39 skipped (no preceding Sl.No detected): '59'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 40 skipped (no preceding Sl.No detected): '61'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 41 skipped (no preceding Sl.No detected): '62'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 42 skipped (no preceding Sl.No detected): '63'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 43 skipped (no preceding Sl.No detected): '65'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 44 skipped (no preceding Sl.No detected): '67'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 45 skipped (no preceding Sl.No detected): '68'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 46 skipped (no preceding Sl.No detected): '69'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 47 skipped (no preceding Sl.No detected): '72'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 48 skipped (no preceding Sl.No detected): '74'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 49 skipped (no preceding Sl.No detected): '75'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 50 skipped (no preceding Sl.No detected): '76'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 51 skipped (no preceding Sl.No detected): '78'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 52 skipped (no preceding Sl.No detected): '80'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 53 skipped (no preceding Sl.No detected): '81'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 54 skipped (no preceding Sl.No detected): '82'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 55 skipped (no preceding Sl.No detected): '85'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 56 skipped (no preceding Sl.No detected): '87'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 57 skipped (no preceding Sl.No detected): '88'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 58 skipped (no preceding Sl.No detected): '89'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 59 skipped (no preceding Sl.No detected): '90'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 60 skipped (no preceding Sl.No detected): '92'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 61 skipped (no preceding Sl.No detected): '94'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 62 skipped (no preceding Sl.No detected): '95'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 63 skipped (no preceding Sl.No detected): '96'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 64 skipped (no preceding Sl.No detected): '97'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 65 skipped (no preceding Sl.No detected): '99'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 66 skipped (no preceding Sl.No detected): '101'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 67 skipped (no preceding Sl.No detected): '102'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 68 skipped (no preceding Sl.No detected): '103'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 69 skipped (no preceding Sl.No detected): '104'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 70 skipped (no preceding Sl.No detected): '106'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 71 skipped (no preceding Sl.No detected): '108'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 72 skipped (no preceding Sl.No detected): '109'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 73 skipped (no preceding Sl.No detected): '110'
+[2026-09-25 12:08:37] [WARNING] [parser.py:379] - Row 74 skipped (no preceding Sl.No detected): '111'
+[2026-09-25 12:08:37] [INFO] [parser.py:400] - Parsing complete. Extracted 0 report blocks.
+[2026-09-25 12:08:37] [ERROR] [logger.py:77] - Error during OTIS report conversion for 'OTIS_MROB_ FVP _17092026template.xlsx': No valid report blocks (Sl.No 1.1, 1.2, etc.) were found in the uploaded workbook.
+Traceback (most recent call last):
+  File "D:\excel project\formatter.py", line 52, in convert_otis_report
+    raise ValueError(
+        "No valid report blocks (Sl.No 1.1, 1.2, etc.) were found in the uploaded workbook."
+    )
+ValueError: No valid report blocks (Sl.No 1.1, 1.2, etc.) were found in the uploaded workbook.
+[2026-09-25 12:08:37] [ERROR] [app.py:301] - Conversion failed in app.py
+Traceback (most recent call last):
+  File "D:\excel project\app.py", line 283, in main
+    saved_path, blocks, conv_summary = convert_otis_report(
+                                       ~~~~~~~~~~~~~~~~~~~^
+        input_file=st.session_state.uploaded_file_bytes,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_file_path=out_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        original_filename=st.session_state.uploaded_filename
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\excel project\formatter.py", line 94, in convert_otis_report
+    raise e
+  File "D:\excel project\formatter.py", line 52, in convert_otis_report
+    raise ValueError(
+        "No valid report blocks (Sl.No 1.1, 1.2, etc.) were found in the uploaded workbook."
+    )
+ValueError: No valid report blocks (Sl.No 1.1, 1.2, etc.) were found in the uploaded workbook.
+[2026-09-25 12:10:37] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:10:37] [INFO] [parser.py:339] - Opening workbook for OTIS parsing...
+[2026-09-25 12:10:37] [INFO] [parser.py:153] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'current': 2, 'point': 3, 'description': 4, 'voltage': 5, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:10:37] [INFO] [parser.py:421] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 12:10:37] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:10:37] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:10:37] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 12:10:37] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.05 seconds.
+[2026-09-25 12:10:37] [INFO] [parser.py:339] - Opening workbook for OTIS parsing...
+[2026-09-25 12:10:37] [INFO] [parser.py:153] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'current': 2, 'point': 3, 'description': 4, 'voltage': 5, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:10:37] [INFO] [parser.py:421] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 12:11:22] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:11:22] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:11:22] [INFO] [parser.py:154] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:11:22] [INFO] [parser.py:422] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 12:11:22] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:11:22] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:11:22] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 12:11:22] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.04 seconds.
+[2026-09-25 12:11:22] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:11:22] [INFO] [parser.py:154] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:11:22] [INFO] [parser.py:422] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 12:11:54] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:11:54] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:11:54] [INFO] [parser.py:154] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:11:54] [INFO] [parser.py:422] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 12:11:54] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:11:54] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:11:54] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 12:11:54] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.04 seconds.
+[2026-09-25 12:11:54] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:11:54] [INFO] [parser.py:154] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:11:54] [INFO] [parser.py:422] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 12:12:54] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:12:54] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:12:54] [INFO] [parser.py:154] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:12:54] [INFO] [parser.py:422] - Parsing complete. Extracted 5 report blocks.
+[2026-09-25 12:12:54] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:12:54] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:12:54] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\Formatted_sample_test_sequence.xlsx'
+[2026-09-25 12:12:54] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\Formatted_sample_test_sequence.xlsx' in 0.04 seconds.
+[2026-09-25 12:13:10] [INFO] [logger.py:62] - File uploaded: 'OTIS_MROB_ FVP _17092026template.xlsx' (73118 bytes)
+[2026-09-25 12:13:10] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:13:10] [INFO] [parser.py:154] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 3, 'description': 5, 'actual_value': 19}
+[2026-09-25 12:13:10] [WARNING] [parser.py:401] - Row 2 skipped (no preceding Sl.No detected): ''
+[2026-09-25 12:13:10] [INFO] [parser.py:422] - Parsing complete. Extracted 72 report blocks.
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:10] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:11] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:13:27] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:13:27] [INFO] [parser.py:154] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 3, 'description': 5, 'actual_value': 19}
+[2026-09-25 12:13:27] [WARNING] [parser.py:401] - Row 2 skipped (no preceding Sl.No detected): ''
+[2026-09-25 12:13:27] [INFO] [parser.py:422] - Parsing complete. Extracted 72 report blocks.
+[2026-09-25 12:13:27] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:27] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 361
+[2026-09-25 12:13:28] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\Formatted_OTIS_MROB_ FVP _17092026template.xlsx'
+[2026-09-25 12:13:28] [INFO] [logger.py:67] - Processing complete for 'OTIS_MROB_ FVP _17092026template.xlsx'. Processed 72 report blocks into 'D:\excel project\output\Formatted_OTIS_MROB_ FVP _17092026template.xlsx' in 1.38 seconds.
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:28] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.1V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.1, Max=1.1
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 1.0V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.9, Max=2.0
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.2V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.2, Max=1.2
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:13:34] [WARNING] [utils.py:167] - Nominal voltage 0.4V not found in VOLTAGE_LOOKUP table. Using fallback min/max calculation: Min=1.4, Max=1.4
+[2026-09-25 12:18:14] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:18:14] [INFO] [parser.py:340] - Opening workbook for OTIS parsing...
+[2026-09-25 12:18:14] [INFO] [parser.py:155] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:18:14] [INFO] [parser.py:329] - Found report: 1.1
+[2026-09-25 12:18:14] [INFO] [parser.py:329] - Found report: 1.2
+[2026-09-25 12:18:14] [INFO] [parser.py:329] - Found report: 2.1
+[2026-09-25 12:18:14] [INFO] [parser.py:329] - Found report: 2.2
+[2026-09-25 12:18:14] [INFO] [parser.py:329] - Found report: 3.1
+[2026-09-25 12:18:14] [INFO] [parser.py:421] - Detected 5 report blocks.
+[2026-09-25 12:18:14] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:18:14] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:18:14] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 12:18:14] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.05 seconds.
+[2026-09-25 12:19:23] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:19:23] [INFO] [parser.py:344] - Opening workbook for OTIS parsing...
+[2026-09-25 12:19:23] [INFO] [parser.py:155] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 1.1
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 1.2
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 2.1
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 2.2
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 3.1
+[2026-09-25 12:19:23] [INFO] [parser.py:425] - Detected 5 report blocks.
+[2026-09-25 12:19:23] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:19:23] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:19:23] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 12:19:23] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.14 seconds.
+[2026-09-25 12:19:23] [INFO] [parser.py:344] - Opening workbook for OTIS parsing...
+[2026-09-25 12:19:23] [INFO] [parser.py:155] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 1.1
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 1.2
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 2.1
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 2.2
+[2026-09-25 12:19:23] [INFO] [parser.py:333] - Found report: 3.1
+[2026-09-25 12:19:23] [INFO] [parser.py:425] - Detected 5 report blocks.
+[2026-09-25 12:19:59] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:19:59] [INFO] [parser.py:344] - Opening workbook for OTIS parsing...
+[2026-09-25 12:19:59] [INFO] [parser.py:155] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 1.1
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 1.2
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 2.1
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 2.2
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 3.1
+[2026-09-25 12:19:59] [INFO] [parser.py:425] - Detected 5 report blocks.
+[2026-09-25 12:19:59] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:19:59] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:19:59] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 12:19:59] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.05 seconds.
+[2026-09-25 12:19:59] [INFO] [parser.py:344] - Opening workbook for OTIS parsing...
+[2026-09-25 12:19:59] [INFO] [parser.py:155] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 1.1
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 1.2
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 2.1
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 2.2
+[2026-09-25 12:19:59] [INFO] [parser.py:333] - Found report: 3.1
+[2026-09-25 12:19:59] [INFO] [parser.py:425] - Detected 5 report blocks.
+[2026-09-25 12:20:16] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:20:16] [INFO] [parser.py:344] - Opening workbook for OTIS parsing...
+[2026-09-25 12:20:16] [INFO] [parser.py:155] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:20:16] [INFO] [parser.py:333] - Found report: 1.1
+[2026-09-25 12:20:16] [INFO] [parser.py:333] - Found report: 1.2
+[2026-09-25 12:20:16] [INFO] [parser.py:333] - Found report: 2.1
+[2026-09-25 12:20:16] [INFO] [parser.py:333] - Found report: 2.2
+[2026-09-25 12:20:16] [INFO] [parser.py:333] - Found report: 3.1
+[2026-09-25 12:20:16] [INFO] [parser.py:425] - Detected 5 report blocks.
+[2026-09-25 12:20:16] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:20:16] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:20:16] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\Formatted_sample_test_sequence.xlsx'
+[2026-09-25 12:20:16] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\Formatted_sample_test_sequence.xlsx' in 0.04 seconds.
+[2026-09-25 12:21:48] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:21:48] [INFO] [parser.py:351] - Opening workbook for OTIS parsing...
+[2026-09-25 12:21:48] [INFO] [parser.py:156] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 1.1
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 1.2
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 2.1
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 2.2
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 3.1
+[2026-09-25 12:21:48] [INFO] [parser.py:448] - Detected 5 report blocks.
+[2026-09-25 12:21:48] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:21:48] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:21:48] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\test_output.xlsx'
+[2026-09-25 12:21:48] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\test_output.xlsx' in 0.04 seconds.
+[2026-09-25 12:21:48] [INFO] [parser.py:351] - Opening workbook for OTIS parsing...
+[2026-09-25 12:21:48] [INFO] [parser.py:156] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 1.1
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 1.2
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 2.1
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 2.2
+[2026-09-25 12:21:48] [INFO] [parser.py:340] - Found report: 3.1
+[2026-09-25 12:21:48] [INFO] [parser.py:448] - Detected 5 report blocks.
+[2026-09-25 12:22:00] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:22:00] [INFO] [parser.py:351] - Opening workbook for OTIS parsing...
+[2026-09-25 12:22:00] [INFO] [parser.py:156] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:22:00] [INFO] [parser.py:340] - Found report: 1.1
+[2026-09-25 12:22:00] [INFO] [parser.py:340] - Found report: 1.2
+[2026-09-25 12:22:00] [INFO] [parser.py:340] - Found report: 2.1
+[2026-09-25 12:22:00] [INFO] [parser.py:340] - Found report: 2.2
+[2026-09-25 12:22:00] [INFO] [parser.py:340] - Found report: 3.1
+[2026-09-25 12:22:00] [INFO] [parser.py:448] - Detected 5 report blocks.
+[2026-09-25 12:22:00] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:22:00] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:22:00] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\Formatted_sample_test_sequence.xlsx'
+[2026-09-25 12:22:00] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\Formatted_sample_test_sequence.xlsx' in 0.04 seconds.
+[2026-09-25 12:24:47] [INFO] [formatter.py:35] - Starting OTIS report conversion workflow...
+[2026-09-25 12:24:47] [INFO] [parser.py:351] - Opening workbook for OTIS parsing...
+[2026-09-25 12:24:47] [INFO] [parser.py:156] - Header row detected at row 1 with mapping: {'sl_no': 1, 'test_name': 2, 'point': 3, 'description': 4, 'voltage': 5, 'current': 6, 'device': 7, 'remarks': 8, 'actual_value': 9}
+[2026-09-25 12:24:47] [INFO] [parser.py:340] - Found report: 1.1
+[2026-09-25 12:24:47] [INFO] [parser.py:340] - Found report: 1.2
+[2026-09-25 12:24:47] [INFO] [parser.py:340] - Found report: 2.1
+[2026-09-25 12:24:47] [INFO] [parser.py:340] - Found report: 2.2
+[2026-09-25 12:24:47] [INFO] [parser.py:340] - Found report: 3.1
+[2026-09-25 12:24:47] [INFO] [parser.py:448] - Detected 5 report blocks.
+[2026-09-25 12:24:47] [INFO] [excel_writer.py:27] - Building formatted OTIS Inspection Report workbook...
+[2026-09-25 12:24:47] [INFO] [excel_writer.py:169] - Workbook construction completed successfully. Total rows written: 26
+[2026-09-25 12:24:47] [INFO] [excel_writer.py:176] - Workbook saved to disk: 'D:\excel project\output\Formatted_sample_test_sequence.xlsx'
+[2026-09-25 12:24:47] [INFO] [logger.py:67] - Processing complete for 'sample_test_sequence.xlsx'. Processed 5 report blocks into 'D:\excel project\output\Formatted_sample_test_sequence.xlsx' in 0.04 seconds.
