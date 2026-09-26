@@ -1,14 +1,13 @@
 """
 Streamlit Application for Universal AI Excel Format Converter.
-Provides a modern dashboard UI for uploading any Excel file, configuring AI column mappings,
-interpreting natural language prompts, applying templates, and downloading transformed reports.
+Allows users to upload any Excel workbook, enter custom output column names manually,
+map input columns, specify formatting rules, and generate formatted Excel output sheets.
 """
 
 import os
 import sys
 import time
 import io
-import json
 import streamlit as st
 import pandas as pd
 
@@ -20,10 +19,10 @@ if BASE_DIR not in sys.path:
 import config
 from logger import logger, log_transformation, log_error
 from utils import ensure_directories, format_output_filename
-from validators import validate_workbook_file, validate_dataframe_headers, validate_column_mapping
+from validators import validate_workbook_file
 from parser import get_workbook_sheet_names, parse_excel_sheet
 from mapping_engine import suggest_column_mappings
-from prompt_engine import parse_user_prompt, PromptInstructions
+from prompt_engine import parse_user_prompt, parse_custom_columns, PromptInstructions
 from transformer import transform_dataset, TransformedData
 from template_engine import TemplateEngine
 from formatter import export_transformed_data
@@ -64,24 +63,19 @@ CUSTOM_CSS = """
         font-size: 15px;
         color: #93c5fd;
     }
-    .metric-card {
+    .section-card {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        padding: 16px;
-        text-align: center;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
     }
-    .metric-val {
-        color: #2563eb;
-        font-size: 26px;
+    .section-title {
+        color: #1e40af;
+        font-size: 18px;
         font-weight: 700;
-    }
-    .metric-lbl {
-        color: #64748b;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        margin-bottom: 12px;
     }
 </style>
 """
@@ -101,12 +95,12 @@ def init_session_state():
         st.session_state.df_input = None
     if "input_summary" not in st.session_state:
         st.session_state.input_summary = None
+    if "custom_columns_text" not in st.session_state:
+        st.session_state.custom_columns_text = "Test Name, Max Value, Min Value, Device, Value, Actual"
     if "manual_mappings" not in st.session_state:
         st.session_state.manual_mappings = {}
     if "user_prompt" not in st.session_state:
         st.session_state.user_prompt = ""
-    if "selected_preset" not in st.session_state:
-        st.session_state.selected_preset = "Auto Grid"
     if "transformed_data" not in st.session_state:
         st.session_state.transformed_data = None
     if "output_bytes" not in st.session_state:
@@ -133,30 +127,8 @@ def main():
             st.title("Universal Converter")
 
         st.markdown("---")
-        st.subheader("📥 1. Input Source")
-
-        uploaded_file = st.file_uploader("Upload Input Excel", type=["xlsx", "xls"], help="Upload any input Excel file")
-
-        sample_choice = st.selectbox(
-            "Or Choose Sample Dataset",
-            options=["None", "OTIS Test Sequence", "Student Marks", "Sales Invoice Data", "Employee Attendance", "Inventory Stock"]
-        )
-
-        if sample_choice != "None" and st.session_state.input_file_bytes is None:
-            sample_map = {
-                "OTIS Test Sequence": "OTIS_Test_Sequence.xlsx",
-                "Student Marks": "Student_Marks_Sheet.xlsx",
-                "Sales Invoice Data": "Sales_Data.xlsx",
-                "Employee Attendance": "Employee_Attendance.xlsx",
-                "Inventory Stock": "Inventory_Stock.xlsx"
-            }
-            s_filename = sample_map[sample_choice]
-            s_path = os.path.join(config.SAMPLE_DIR, s_filename)
-            if os.path.exists(s_path):
-                with open(s_path, "rb") as f:
-                    st.session_state.input_file_bytes = f.read()
-                st.session_state.input_filename = s_filename
-                st.success(f"Loaded '{s_filename}'!")
+        st.subheader("📥 1. Input Excel File")
+        uploaded_file = st.file_uploader("Upload Input Workbook", type=["xlsx", "xls"], help="Upload any Excel file to convert")
 
         if uploaded_file is not None:
             f_bytes = uploaded_file.getvalue()
@@ -167,18 +139,14 @@ def main():
                 st.session_state.transformed_data = None
 
         st.markdown("### 📄 2. Format Template (Optional)")
-        template_file = st.file_uploader("Upload Excel Template", type=["xlsx"], help="Optional template defines formatting, fonts, borders")
+        template_file = st.file_uploader("Upload Excel Template", type=["xlsx"], help="Optional template defines fonts, borders, fills")
         if template_file is not None:
             st.session_state.template_file_bytes = template_file.getvalue()
             st.success("Template loaded!")
 
         st.markdown("---")
-        st.subheader("⚙️ 3. Transformation Configuration")
-
-        preset = st.selectbox("Preset Layout", options=list(config.PRESET_TEMPLATES.keys()), index=0)
-        st.session_state.selected_preset = preset
-
-        output_format = st.selectbox("Output Format", options=config.SUPPORTED_OUTPUT_FORMATS, index=0)
+        st.subheader("⚙️ 3. Output Format")
+        output_format = st.selectbox("Choose Export Format", options=config.SUPPORTED_OUTPUT_FORMATS, index=0)
 
         st.markdown("---")
         col_btn1, col_btn2 = st.columns(2)
@@ -195,29 +163,24 @@ def main():
         <div class="header-card">
             <div class="header-title">Universal AI Excel Format Converter</div>
             <div class="header-subtitle">
-                Enterprise Data Transformation & Automated Format Conversion System
+                Enter your desired custom output column names and convert any Excel file automatically
             </div>
         </div>
     """, unsafe_allow_html=True)
 
     if st.session_state.input_file_bytes is None:
-        st.info("👋 Welcome! Please upload an Excel workbook from the sidebar or choose a sample dataset to get started.")
+        st.info("👋 Please upload an Excel workbook from the sidebar to begin.")
 
-        # Quick Demo Cards
-        st.markdown("### 💡 What would you like to convert today?")
-        c1, c2, c3 = st.columns(3)
-        with c1:
-            st.markdown("#### 🏢 OTIS Test Sequence")
-            st.caption("Converts raw test sequence rows into formatted 5-row inspection blocks with voltage/current limits.")
-        with c2:
-            st.markdown("#### 🎓 Student Marks")
-            st.caption("Maps student marksheets to result sheets with calculated Totals, Percentages, and Grades.")
-        with c3:
-            st.markdown("#### 🧾 Sales & Billing")
-            st.caption("Transforms sales orders into formatted Invoice statements with Subtotal, GST, and Grand Totals.")
+        with st.expander("📌 How to Use", expanded=True):
+            st.markdown("""
+            1. **Upload your Excel workbook** in the sidebar.
+            2. **Enter your desired output column names** (e.g. `Test Name, Max Value, Min Value, Device, Value, Actual`).
+            3. **Review & customize AI column mappings** to map your uploaded columns to your new output columns.
+            4. **Click 'Convert'** to generate and download your formatted Excel output sheet!
+            """)
         return
 
-    # Parse Excel Sheet if not already parsed
+    # Parse Excel Sheet if not already loaded
     if st.session_state.df_input is None:
         try:
             is_valid, errs = validate_workbook_file(st.session_state.input_file_bytes, st.session_state.input_filename)
@@ -238,187 +201,176 @@ def main():
             logger.error("Excel parsing failed in app.py", exc_info=True)
             return
 
-    # --- DASHBOARD TABS ---
-    tab1, tab2, tab3, tab4 = st.columns([1, 1, 1, 1])
+    # --- STEP 1: SHEET INSPECTOR ---
+    st.markdown("<div class='section-card'><div class='section-title'>📁 Step 1: Input Worksheet Inspector</div>", unsafe_allow_html=True)
+    sheet_list = st.session_state.input_summary.get("available_sheets", [st.session_state.selected_sheet])
 
-    st.markdown("---")
+    if len(sheet_list) > 1:
+        chosen_sheet = st.selectbox("Select Worksheet", options=sheet_list, index=sheet_list.index(st.session_state.selected_sheet))
+        if chosen_sheet != st.session_state.selected_sheet:
+            df, _, summary = parse_excel_sheet(st.session_state.input_file_bytes, sheet_name=chosen_sheet)
+            st.session_state.df_input = df
+            st.session_state.selected_sheet = chosen_sheet
+            st.session_state.input_summary = summary
+            st.rerun()
 
-    # Main Tabs Interface
-    main_tab1, main_tab2, main_tab3, main_tab4 = st.tabs([
-        "📁 1. Sheet Preview",
-        "🤖 2. AI Column Mapping",
-        "✍️ 3. Natural Language Prompt",
-        "📊 4. Transformed Preview & Export"
-    ])
+    m1, m2, m3 = st.columns(3)
+    with m1:
+        st.metric("Worksheet", st.session_state.selected_sheet)
+    with m2:
+        st.metric("Total Input Rows", len(st.session_state.df_input))
+    with m3:
+        st.metric("Total Input Columns", len(st.session_state.df_input.columns))
 
-    # --- TAB 1: SHEET PREVIEW ---
-    with main_tab1:
-        st.markdown("### 📁 Uploaded Sheet Inspector")
-        sheet_list = st.session_state.input_summary.get("available_sheets", [st.session_state.selected_sheet])
+    with st.expander("🔍 View Input Sheet Data (Top 50 Rows)", expanded=False):
+        st.dataframe(st.session_state.df_input.head(50), use_container_width=True, height=250)
+    st.markdown("</div>", unsafe_allow_html=True)
 
-        if len(sheet_list) > 1:
-            chosen_sheet = st.selectbox("Select Worksheet", options=sheet_list, index=sheet_list.index(st.session_state.selected_sheet))
-            if chosen_sheet != st.session_state.selected_sheet:
-                df, _, summary = parse_excel_sheet(st.session_state.input_file_bytes, sheet_name=chosen_sheet)
-                st.session_state.df_input = df
-                st.session_state.selected_sheet = chosen_sheet
-                st.session_state.input_summary = summary
-                st.rerun()
+    # --- STEP 2: CUSTOM COLUMN CONFIGURATION ---
+    st.markdown("<div class='section-card'><div class='section-title'>✏️ Step 2: Enter Your Desired Output Columns</div>", unsafe_allow_html=True)
+    st.caption("Type the exact column names you want to display in your output Excel format sheet (separated by commas).")
 
-        m1, m2, m3 = st.columns(3)
-        with m1:
-            st.metric("Worksheet", st.session_state.selected_sheet)
-        with m2:
-            st.metric("Total Rows", len(st.session_state.df_input))
-        with m3:
-            st.metric("Total Columns", len(st.session_state.df_input.columns))
+    cols_input = st.text_area(
+        "Output Column Names (Comma-separated)",
+        value=st.session_state.custom_columns_text,
+        height=70,
+        help="Type your exact custom column names, e.g.: Test Name, Max Value, Min Value, Device, Value, Actual"
+    )
+    st.session_state.custom_columns_text = cols_input
 
-        st.markdown("#### Data Preview (Top 50 Rows)")
-        st.dataframe(st.session_state.df_input.head(50), use_container_width=True, height=350)
+    # Quick Preset Column Fillers
+    st.markdown("**Quick Preset Column Templates (Click to fill):**")
+    qc1, qc2, qc3, qc4 = st.columns(4)
+    with qc1:
+        if st.button("📋 Test / Inspection Columns"):
+            st.session_state.custom_columns_text = "Sl No, Test Name, Device, Value, Min Value, Max Value, Actual"
+            st.rerun()
+    with qc2:
+        if st.button("🎓 Student Marks Columns"):
+            st.session_state.custom_columns_text = "Student Name, USN, Department, Semester, Total Marks, Percentage, Grade"
+            st.rerun()
+    with qc3:
+        if st.button("🧾 Invoice / Billing Columns"):
+            st.session_state.custom_columns_text = "Invoice No, Item Description, Quantity, Unit Price, Total, GST (18%), Grand Total"
+            st.rerun()
+    with qc4:
+        if st.button("📦 Inventory BOM Columns"):
+            st.session_state.custom_columns_text = "Part No, Part Description, Quantity, Supplier, Unit Cost, Total Value"
+            st.rerun()
 
-    # --- TAB 2: AI COLUMN MAPPING ---
-    with main_tab2:
-        st.markdown("### 🤖 AI Column Mapping Engine")
-        st.caption("Automatic AI suggestions mapping input columns to output columns. Override any mapping using the dropdowns.")
+    target_columns = parse_custom_columns(st.session_state.custom_columns_text)
+    st.markdown(f"**Detected Output Columns ({len(target_columns)}):** " + ", ".join([f"`{c}`" for c in target_columns]))
+    st.markdown("</div>", unsafe_allow_html=True)
 
-        # Interpret Prompt to get target columns
-        instructions = parse_user_prompt(st.session_state.user_prompt, default_preset=st.session_state.selected_preset)
-        input_cols = list(st.session_state.df_input.columns)
-        target_cols = instructions.target_columns
+    # --- STEP 3: AI COLUMN MAPPING MATRIX ---
+    st.markdown("<div class='section-card'><div class='section-title'>🤖 Step 3: Map Input Columns to Output Columns</div>", unsafe_allow_html=True)
+    st.caption("AI has auto-suggested mappings below. You can override any column using the dropdown selection.")
 
-        ai_suggestions = suggest_column_mappings(input_cols, target_cols)
+    input_cols = list(st.session_state.df_input.columns)
+    ai_suggestions = suggest_column_mappings(input_cols, target_columns)
 
-        mapping_table = []
-        final_column_map = {}
+    final_column_map = {}
+    mapping_rows = []
 
-        for target in target_cols:
-            sug_col, conf = ai_suggestions.get(target, ("", 0.0))
+    grid_cols = st.columns(min(len(target_columns), 3) or 1)
+    for idx, target in enumerate(target_columns):
+        c_idx = idx % len(grid_cols)
+        sug_col, conf = ai_suggestions.get(target, ("", 0.0))
 
-            # Selectbox for manual override
-            options = ["(Blank / None)"] + input_cols
-            default_idx = options.index(sug_col) if sug_col in options else 0
+        options = ["(Blank / Formula)"] + input_cols
+        default_idx = options.index(sug_col) if sug_col in options else 0
 
+        with grid_cols[c_idx]:
             chosen_col = st.selectbox(
-                f"Target: '{target}'",
+                f"Output Column: **{target}**",
                 options=options,
                 index=default_idx,
                 key=f"map_select_{target}"
             )
-
-            actual_input = "" if chosen_col == "(Blank / None)" else chosen_col
+            actual_input = "" if chosen_col == "(Blank / Formula)" else chosen_col
             final_column_map[target] = actual_input
 
-            confidence_label = f"{int(conf*100)}% Match" if conf > 0 else "Manual / Default"
-            mapping_table.append({
-                "Target Column": target,
-                "Mapped Input Column": actual_input or "(Blank)",
-                "AI Confidence": confidence_label
-            })
+    st.session_state.manual_mappings = final_column_map
+    st.markdown("</div>", unsafe_allow_html=True)
 
-        st.session_state.manual_mappings = final_column_map
-        st.dataframe(pd.DataFrame(mapping_table), use_container_width=True)
+    # --- STEP 4: OPTIONAL RULES & FORMULAS ---
+    st.markdown("<div class='section-card'><div class='section-title'>✍️ Step 4: Optional Transformation Rules (Optional)</div>", unsafe_allow_html=True)
+    prompt_input = st.text_input(
+        "Enter optional calculation or layout instructions (optional)",
+        value=st.session_state.user_prompt,
+        placeholder="Example: Merge Sl No and Test Name. Calculate Percentage = Total Marks / 500 * 100."
+    )
+    st.session_state.user_prompt = prompt_input
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    # --- TAB 3: PROMPT ENGINE ---
-    with main_tab3:
-        st.markdown("### ✍️ Natural Language Transformation Prompt")
-        st.caption("Describe your desired output layout in plain English.")
+    # --- STEP 5: TRANSFORMED PREVIEW & EXPORT ---
+    st.markdown("<div class='section-card'><div class='section-title'>📊 Step 5: Transformed Output Preview & Download</div>", unsafe_allow_html=True)
 
-        prompt_input = st.text_area(
-            "Enter Transformation Prompt",
-            value=st.session_state.user_prompt,
-            height=120,
-            placeholder="Example: Convert to Student Result sheet with columns: Student Name, USN, Total Marks, Percentage, Grade. Calculate Percentage = Total Marks / 500 * 100."
-        )
-        st.session_state.user_prompt = prompt_input
+    if gen_clicked or st.session_state.transformed_data is not None:
+        if gen_clicked:
+            try:
+                with st.spinner("Building custom Excel output format..."):
+                    start_t = time.time()
+                    instructions = parse_user_prompt(st.session_state.user_prompt, custom_columns_text=st.session_state.custom_columns_text)
+                    col_map = st.session_state.manual_mappings
 
-        # Quick Example Buttons
-        st.markdown("#### Quick Example Prompts")
-        qp1, qp2, qp3 = st.columns(3)
-        with qp1:
-            if st.button("Sample: OTIS Inspection Report"):
-                st.session_state.user_prompt = "Arrange this Excel into OTIS report format with columns: Sl No, Test Name, Device, Value, Min, Max, Actual. Merge Sl No and Test Name cells."
-                st.rerun()
-        with qp2:
-            if st.button("Sample: Student Result Sheet"):
-                st.session_state.user_prompt = "Convert to Student Result sheet with columns: Student Name, USN, Department, Semester, Total Marks, Percentage, Grade. Calculate Percentage = Total Marks / 500 * 100."
-                st.rerun()
-        with qp3:
-            if st.button("Sample: Sales Invoice"):
-                st.session_state.user_prompt = "Convert to Invoice format with columns: Invoice No, Item Description, Quantity, Unit Price, Total, GST (18%), Grand Total."
-                st.rerun()
+                    t_data = transform_dataset(st.session_state.df_input, col_map, instructions)
 
-        # Parsed Rules Inspector
-        if prompt_input:
-            p_inst = parse_user_prompt(prompt_input, default_preset=st.session_state.selected_preset)
-            with st.expander("📋 View Parsed Prompt Rules", expanded=True):
-                st.json(p_inst.to_dict())
+                    tmpl_engine = TemplateEngine(st.session_state.template_file_bytes) if st.session_state.template_file_bytes else None
 
-    # --- TAB 4: TRANSFORMED PREVIEW & EXPORT ---
-    with main_tab4:
-        st.markdown("### 📊 Transformed Output & Export")
+                    out_name = format_output_filename(st.session_state.input_filename, output_format.lower())
+                    out_path = os.path.join(config.OUTPUT_DIR, out_name)
 
-        if gen_clicked or st.session_state.transformed_data is not None:
-            if gen_clicked:
-                try:
-                    with st.spinner("Executing transformation engine..."):
-                        start_t = time.time()
-                        instructions = parse_user_prompt(st.session_state.user_prompt, default_preset=st.session_state.selected_preset)
-                        col_map = st.session_state.manual_mappings
+                    saved_path = export_transformed_data(t_data, out_path, output_format, tmpl_engine)
 
-                        t_data = transform_dataset(st.session_state.df_input, col_map, instructions)
+                    with open(saved_path, "rb") as f:
+                        st.session_state.output_bytes = f.read()
 
-                        tmpl_engine = TemplateEngine(st.session_state.template_file_bytes) if st.session_state.template_file_bytes else None
+                    st.session_state.output_filepath = saved_path
+                    st.session_state.transformed_data = t_data
 
-                        out_name = format_output_filename(st.session_state.input_filename, output_format.lower())
-                        out_path = os.path.join(config.OUTPUT_DIR, out_name)
+                    elapsed = time.time() - start_t
+                    log_transformation(
+                        filename=st.session_state.input_filename,
+                        preset="Custom Columns",
+                        prompt=st.session_state.custom_columns_text,
+                        input_rows=len(st.session_state.df_input),
+                        output_rows=len(t_data.df_grid),
+                        elapsed_time=elapsed
+                    )
+                    st.success(f"🎉 Report generated successfully! Saved to `{saved_path}`")
 
-                        saved_path = export_transformed_data(t_data, out_path, output_format, tmpl_engine)
+            except Exception as e:
+                st.error(f"❌ Transformation failed: {str(e)}")
+                logger.error("Transformation error in app.py", exc_info=True)
+                return
 
-                        with open(saved_path, "rb") as f:
-                            st.session_state.output_bytes = f.read()
+        if st.session_state.transformed_data is not None:
+            t_res = st.session_state.transformed_data
 
-                        st.session_state.output_filepath = saved_path
-                        st.session_state.transformed_data = t_data
+            tc1, tc2, tc3 = st.columns(3)
+            with tc1:
+                st.metric("Total Output Rows", len(t_res.df_grid))
+            with tc2:
+                st.metric("Total Output Columns", len(t_res.df_grid.columns))
+            with tc3:
+                st.metric("Output File Format", output_format)
 
-                        elapsed = time.time() - start_t
-                        log_transformation(
-                            filename=st.session_state.input_filename,
-                            preset=instructions.preset_name,
-                            prompt=st.session_state.user_prompt,
-                            input_rows=len(st.session_state.df_input),
-                            output_rows=len(t_data.df_grid),
-                            elapsed_time=elapsed
-                        )
-                        st.success(f"🎉 Transformation complete! File saved to `{saved_path}`")
+            st.markdown("#### Formatted Output Data Table Preview")
 
-                except Exception as e:
-                    st.error(f"❌ Transformation failed: {str(e)}")
-                    logger.error("Transformation error in app.py", exc_info=True)
-                    return
+            # Convert preview table data to string object types to avoid PyArrow display errors
+            df_preview_disp = t_res.df_grid.head(50).astype(str)
+            st.dataframe(df_preview_disp, use_container_width=True, height=350)
 
-            if st.session_state.transformed_data is not None:
-                t_res = st.session_state.transformed_data
-
-                # Summary Cards
-                tc1, tc2, tc3 = st.columns(3)
-                with tc1:
-                    st.metric("Input Rows", t_res.summary_metrics.get("input_rows", 0))
-                with tc2:
-                    st.metric("Transformed Rows", t_res.summary_metrics.get("output_rows", 0))
-                with tc3:
-                    st.metric("Output Preset", t_res.layout_type)
-
-                st.markdown("#### Transformed Data Preview")
-                st.dataframe(t_res.df_grid.head(50), use_container_width=True, height=350)
-
-                out_filename = os.path.basename(st.session_state.output_filepath)
-                st.download_button(
-                    label=f"📥 Download {out_filename}",
-                    data=st.session_state.output_bytes,
-                    file_name=out_filename,
-                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    type="primary"
-                )
+            out_filename = os.path.basename(st.session_state.output_filepath)
+            st.download_button(
+                label=f"📥 Download {out_filename}",
+                data=st.session_state.output_bytes,
+                file_name=out_filename,
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                type="primary"
+            )
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 if __name__ == "__main__":

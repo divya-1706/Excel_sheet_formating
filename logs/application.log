@@ -887,3 +887,26 @@ ValueError: No valid report blocks (Sl.No 1.1, 1.2, etc.) were found in the uplo
 [2026-09-25 12:54:34] [INFO] [prompt_engine.py:112] - Parsed prompt: Preset='Student Result Sheet', Columns=['Student Name', 'USN', 'Total Marks', 'Percentage']
 [2026-09-25 12:54:34] [INFO] [prompt_engine.py:112] - Parsed prompt: Preset='Student Result Sheet', Columns=['Student Name', 'USN', 'Department', 'Semester', 'Total Marks', 'Percentage', 'Grade']
 [2026-09-25 12:54:34] [INFO] [transformer.py:123] - Transforming dataset using preset 'Student Result Sheet'...
+[2026-09-25 13:06:18] [INFO] [prompt_engine.py:123] - Parsed prompt: Target Columns=['Invoice No', 'Item Description', 'Quantity', 'Unit Price', 'Total', 'GST (18%)', 'Grand Total']
+[2026-09-25 13:06:18] [INFO] [mapping_engine.py:80] - AI Column Mapping Engine generated 3 mappings.
+[2026-09-25 13:06:18] [INFO] [parser.py:59] - Parsing Excel workbook sheet...
+[2026-09-25 13:06:18] [INFO] [parser.py:43] - Header row detected at index 1 with 5 columns.
+[2026-09-25 13:06:18] [INFO] [parser.py:117] - Parsed sheet 'Sheet1': 4 rows, 5 columns.
+[2026-09-25 13:06:18] [INFO] [prompt_engine.py:123] - Parsed prompt: Target Columns=['Student Name', 'USN', 'Department', 'Semester', 'Total Marks', 'Percentage', 'Grade']
+[2026-09-25 13:06:18] [INFO] [prompt_engine.py:123] - Parsed prompt: Target Columns=['Sl No', 'Test Name', 'Device', 'Value', 'Min', 'Max', 'Actual']
+[2026-09-25 13:06:18] [INFO] [prompt_engine.py:123] - Parsed prompt: Target Columns=['Student Name', 'USN', 'Department', 'Semester', 'Total Marks', 'Percentage', 'Grade']
+[2026-09-26 09:57:21] [INFO] [prompt_engine.py:134] - Parsed prompt: Target Columns=['Invoice No', 'Item Description', 'Quantity', 'Unit Price', 'Total', 'GST (18%)', 'Grand Total']
+[2026-09-26 09:57:21] [INFO] [transformer.py:123] - Transforming dataset using preset 'Invoice / Billing'...
+[2026-09-26 09:57:21] [INFO] [formatter.py:116] - Exporting data to format 'XLSX' at 'D:\excel project\output\test_formatter_out.xlsx'...
+[2026-09-26 09:57:21] [INFO] [formatter.py:33] - Building universal openpyxl workbook...
+[2026-09-26 09:57:21] [INFO] [formatter.py:104] - Universal workbook constructed successfully. Total rows: 2
+[2026-09-26 09:57:21] [INFO] [formatter.py:127] - Export complete: 'D:\excel project\output\test_formatter_out.xlsx'
+[2026-09-26 09:57:21] [INFO] [mapping_engine.py:80] - AI Column Mapping Engine generated 3 mappings.
+[2026-09-26 09:57:21] [INFO] [parser.py:59] - Parsing Excel workbook sheet...
+[2026-09-26 09:57:21] [INFO] [parser.py:43] - Header row detected at index 1 with 5 columns.
+[2026-09-26 09:57:21] [INFO] [parser.py:117] - Parsed sheet 'Sheet1': 4 rows, 5 columns.
+[2026-09-26 09:57:21] [INFO] [prompt_engine.py:134] - Parsed prompt: Target Columns=['Student Name', 'USN', 'Department', 'Semester', 'Total Marks', 'Percentage', 'Grade']
+[2026-09-26 09:57:21] [INFO] [prompt_engine.py:134] - Parsed prompt: Target Columns=['Sl No', 'Test Name', 'Device', 'Value', 'Min', 'Max', 'Actual']
+[2026-09-26 09:57:21] [INFO] [prompt_engine.py:134] - Parsed prompt: Target Columns=['Student Name', 'USN', 'Total Marks', 'Percentage']
+[2026-09-26 09:57:21] [INFO] [prompt_engine.py:134] - Parsed prompt: Target Columns=['Student Name', 'USN', 'Department', 'Semester', 'Total Marks', 'Percentage', 'Grade']
+[2026-09-26 09:57:21] [INFO] [transformer.py:123] - Transforming dataset using preset 'Student Result Sheet'...
